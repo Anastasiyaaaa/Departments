@@ -1,0 +1,21 @@
+.Layout {
+    height: 100vh;
+    display:flex
+}
+.Layout aside{
+    flex-grow:8;
+}
+.Layout main{
+    flex-grow:3;
+}
+.Layout table{
+    width: 100%;
+}
+.Layout table th{
+    width: 10%;
+    text-align: left;
+}
+.Layout table th:first-child{
+    padding-left: 15px;
+    width: 70%;
+}

@@ -1,0 +1,61 @@
+[
+  {
+    "name": "Здравоохранения",
+    "employees": [{
+      "employee": {
+        "name": "Rick",
+        "email": "rickrick@gmail.com",
+        "data": "12-04-2019",
+        "salary": 500
+      }
+    }, {
+      "employee": {
+        "name": "David",
+        "email": "davidada@gmail.com",
+        "data": "30-11-1999",
+        "salary": 300
+      }
+    }]
+  },
+  {
+    "name": "Контроля",
+    "employees": []
+  },
+  {
+    "name": "Образования",
+    "employees": [{
+      "employee": {
+        "name": "Anna",
+        "email": "annaanna@gmail.com",
+        "data": "12-04-2019",
+        "salary": 500
+      }
+    }]
+  },
+  {
+    "name": "Культура",
+    "employees": [{
+      "employee": {
+        "name": "Rick",
+        "email": "rickrick@gmail.com",
+        "data": "12-04-2019",
+        "salary": 500
+      }
+    }, {
+      "employee": {
+        "name": "David",
+        "email": "davidada@gmail.com",
+        "data": "30-11-1999",
+        "salary": 300
+      }
+    }, {
+      "employee": {
+        "name": "Andrew",
+        "email": "andrew@gmail.com",
+        "data": "12-04-2019",
+        "salary": 500
+      }
+    }]
+  }
+]
+
