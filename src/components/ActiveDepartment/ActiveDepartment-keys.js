@@ -1,11 +1,11 @@
 import React from 'react';
 
-const activeDepartmentKeys = ({employeeObj }) => {
+const activeDepartmentKeys = ({employeeObj}) => {
     const employeeKeys = Object.keys(employeeObj);
     return (
-        employeeKeys.map( (activeKey) => {
+        employeeKeys.map( (activeKey, index) => {
             return (
-                <td>{employeeObj[activeKey]}</td>
+                <td key={index}>{employeeObj[activeKey]}</td>
             )
         })
     )

@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import depart from './../../departments.json';
-import Layout from './Layout.js';
+import DepartmentsLayout from '../../containers/Departments/DepartmentsLayout.js';
 import DepartmentEdit from './DepartmentEdit.js';
 import DepartmentAdd from './DepartmentAdd.js';
+import Popup from "../PopUp/PopUp";
 
 
 class View extends Component {
@@ -42,14 +43,16 @@ class View extends Component {
                 )
         } else if(this.state.action === "main"){
             return (
-                <Layout
+                <DepartmentsLayout
                     active={this.state.active}
                     data={this.state.departments}
                     deleteHandler={this.deleteHandler.bind(this)}
                     addHandler={this.addHandler.bind(this)}
                     editHandler={this.editHandler.bind(this)}
                     update={this.updateData.bind(this)}
-                />
+                >
+                <Popup active={this.state.active}/>
+                </DepartmentsLayout>
             )
         }
     }

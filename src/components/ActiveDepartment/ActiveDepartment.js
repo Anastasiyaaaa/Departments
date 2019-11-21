@@ -26,12 +26,11 @@ const activeDepartment = ({ data, active }) => {
             )
         });
     } else {
-        layout = "Сотрудников - нет "
+        layout = <tr><td>Сотрудников - нет</td></tr>;
     }
     
     return (
         <table className="user-list table table-striped">
-            {}
             <thead>
             <tr>
                 <th>Name</th>

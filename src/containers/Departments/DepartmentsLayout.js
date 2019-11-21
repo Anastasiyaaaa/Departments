@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import classes from './Layout.css';
-import DepartmentList from './Department-list.js';
+import classes from '../../hoc/Layout/Layout.css';
+import DepartmentList from '../../hoc/Layout/Department-list.js';
 import ActiveDepartment from '../../components/ActiveDepartment/ActiveDepartment.js';
 
 
-class Layout extends Component {
+class Departments extends Component {
     constructor(props) {
         super(props);
     }
@@ -29,4 +29,4 @@ class Layout extends Component {
     }
 }
 
-export default Layout
+export default Departments;

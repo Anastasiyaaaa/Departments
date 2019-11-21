@@ -22,9 +22,7 @@ import DepartmentData from "./DepartmentData.js"
                     <th>Edit</th>
                 </tr>
             </thead>
-            <tbody>
-                {departments}
-            </tbody>
+            <tbody>{departments}</tbody>
         </table>
     );
 };
