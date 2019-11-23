@@ -1,16 +1,16 @@
 import React from 'react';
 import DepartmentData from "./DepartmentData.js"
 
- const departmentList = ({ data, update, deleteHandler, editHandler, addHandler}) => {
+ const departmentList = ({ data, update, deleteHandler, checkButtonId }) => {
     if (!data) { return (<p>Loading...</p>); }
     const departments = data.map((department, index) => {
         return (<DepartmentData key={index}
                                 department={department}
                                 deleteHandler={deleteHandler}
-                                editHandler={editHandler}
-                                addHandler={addHandler}
                                 update={update}
-                                index={index} />);
+                                index={index}
+                                checkButtonId={checkButtonId}
+        />);
     });
     return (
         <table className="user-list table table-striped">
@@ -22,7 +22,12 @@ import DepartmentData from "./DepartmentData.js"
                     <th>Edit</th>
                 </tr>
             </thead>
-            <tbody>{departments}</tbody>
+            <tbody>
+            {departments}
+            <tr>
+                <td><button id="buttonAdd" data-button-add="departments" onClick={(e) => { checkButtonId(e.target.id); update({ popup: true  }) }}> Add </button></td>
+            </tr>
+            </tbody>
         </table>
     );
 };

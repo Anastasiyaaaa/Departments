@@ -1,12 +1,12 @@
 import React from 'react';
 
-const buttons = ({ update, index, deleteHandler, editHandler, addHandler }) => {
+const buttons = ({ update, index, deleteHandler, checkButtonId}) => {
     return (
         <React.Fragment>
-        <td><button onClick={() => editHandler (index)}>Edits</button></td>
-        <td><button onClick={() => addHandler (index)}> Add </button></td>
-        <td><button onClick={() => deleteHandler (index)}> Remove </button></td>
-        <td><button onClick={() => update({ active: index })}> Список </button></td>
+            <td><button id="buttonEdit" onClick={(e) => { checkButtonId(e.target.id); update({ popup: true  }) }}>Edit</button></td>
+            {/*<td><button id="buttonAdd" onClick={(e) => { checkButtonId(e.target.id); update({ popup: true  }) }}> Add </button></td>*/}
+            <td><button id="buttonRemove" onClick={() => deleteHandler (index)}> Remove </button></td>
+            <td><button id="buttonList" onClick={(e) => { checkButtonId(e.target.id); update({ active: index,  popup: true  }) }}> Список </button></td>
         </React.Fragment>
     )
 };

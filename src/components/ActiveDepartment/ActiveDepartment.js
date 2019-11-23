@@ -1,7 +1,9 @@
 import React from 'react';
 import ActiveDepartmentKeys from "./ActiveDepartment-keys"
-const activeDepartment = ({ data, active }) => {
+import Buttons from '../../hoc/Layout/Buttons.js'
+const activeDepartment = ({ data, active, update, checkButtonId, deleteHandler }) => {
 
+    console.log('data');
     if (!data || !data[active]) {
         return <h3>Выберите департамент для просмотра сотрудников</h3>;
     }
@@ -17,7 +19,12 @@ const activeDepartment = ({ data, active }) => {
                             <tbody>
                             <tr>
                                 <ActiveDepartmentKeys employeeObj={employeeObj}/>
-                                <td><button>Edit</button></td>
+                                <Buttons
+                                    update={update}
+                                    deleteHandler={deleteHandler}
+                                    index={active}
+                                    checkButtonId={checkButtonId}
+                                />
                             </tr>
                             </tbody>
                         </table>
@@ -37,7 +44,12 @@ const activeDepartment = ({ data, active }) => {
                 <th>{departmentSelected.name}</th>
             </tr>
             </thead>
-            <tbody>{layout}</tbody>
+            <tbody>
+            {layout}
+            <tr>
+                <td><button id="buttonAdd" data-button-add="employee" onClick={(e) => { checkButtonId(e.target.id); update({ popup: true  }) }}> Add </button></td>
+            </tr>
+            </tbody>
         </table>
     );
 };

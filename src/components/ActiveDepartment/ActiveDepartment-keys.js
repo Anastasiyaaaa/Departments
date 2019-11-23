@@ -5,7 +5,9 @@ const activeDepartmentKeys = ({employeeObj}) => {
     return (
         employeeKeys.map( (activeKey, index) => {
             return (
-                <td key={index}>{employeeObj[activeKey]}</td>
+                <td key={index}>
+                    <input type="text" value={employeeObj[activeKey]} />
+                </td>
             )
         })
     )

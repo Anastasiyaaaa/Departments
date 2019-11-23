@@ -3,7 +3,6 @@ import depart from './../../departments.json';
 import DepartmentsLayout from '../../containers/Departments/DepartmentsLayout.js';
 import DepartmentEdit from './DepartmentEdit.js';
 import DepartmentAdd from './DepartmentAdd.js';
-import Popup from "../PopUp/PopUp";
 
 
 class View extends Component {
@@ -13,7 +12,8 @@ class View extends Component {
             departments: depart,
             active: null,
             term: '',
-            action: "main"
+            action: "",
+            popup: false
         };
     }
     deleteHandler(index){
@@ -23,17 +23,23 @@ class View extends Component {
     }
     editHandler(index){
         console.log("edit" + index);
-        this.setState({action : "edit"});
+        this.setState({
+            action : "edit",
+            popup: true
+        });
     }
     addHandler(index){
         console.log("add" + index);
-        this.setState({action : "add"});
-    }
+        this.setState({
+            action : "add",
+            popup: true
+        });
+    }/*
     updateData(config) {
         this.setState(config);
-    }
+    }*/
     render(){
-        if (this.state.action === "edit"){
+        /*if (this.state.action === "edit"){
             return(
                 <DepartmentEdit update={this.updateData.bind(this)} action={this.state.action}/>
             )
@@ -41,7 +47,10 @@ class View extends Component {
             return(
                     <DepartmentAdd update={this.updateData.bind(this)} action={this.state.action}/>
                 )
-        } else if(this.state.action === "main"){
+        } else*/ /*if(this.state.popup === true){
+            return (
+            )
+        } else {*/
             return (
                 <DepartmentsLayout
                     active={this.state.active}
@@ -49,13 +58,11 @@ class View extends Component {
                     deleteHandler={this.deleteHandler.bind(this)}
                     addHandler={this.addHandler.bind(this)}
                     editHandler={this.editHandler.bind(this)}
-                    update={this.updateData.bind(this)}
+                    // update={this.updateData.bind(this)}
                 >
-                <Popup active={this.state.active}/>
                 </DepartmentsLayout>
             )
         }
-    }
 }
 
 export default View

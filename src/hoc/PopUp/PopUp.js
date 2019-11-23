@@ -1,25 +1,39 @@
-import React, {Component} from 'react';
+import React from 'react';
 import classes from './PopUp.css';
-import depart from './../../departments.json';
+import Buttons from '../Layout/Buttons.js'
+import ActiveDepartment from "../../components/ActiveDepartment/ActiveDepartment";
 
 
-class Popup extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            departments: depart,
-            active: null,
-            term: '',
-            action: "main"
-        };
-    }
+const popup = ({update, checkButtonId, data, active, deleteHandler}) => {
 
-    render() {
         // console.log(active);
         return (
-            <div className={classes.PopUp_body}>popup</div>
+            <div className={classes.PopUp_body}>
+                <h1>Popup</h1>
+                <ActiveDepartment data={data}
+                                  active={active}
+                                  update={update}
+                                  deleteHandler={deleteHandler}
+                                  index={active}
+                                  checkButtonId={checkButtonId}
+                />
+{/*
+                <table>
+                    <tbody>
+                        <tr>
+                            <Buttons
+                                update={update}
+                                deleteHandler={deleteHandler}
+                                index={active}
+                                checkButtonId={checkButtonId}
+                            />
+                        </tr>
+                    </tbody>
+                </table>
+*/}
+                <button id="popup-close" onClick={(e) => { checkButtonId(e.target.id); update({  popup: false}) } }>Close</button>
+            </div>
         )
-    }
-}
+};
 
-export default Popup;
+export default popup;
