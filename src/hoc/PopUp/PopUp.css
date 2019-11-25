@@ -11,3 +11,6 @@
     width: 700px;
     height: 300px;
 }
+input{
+    max-width: 110px;
+}

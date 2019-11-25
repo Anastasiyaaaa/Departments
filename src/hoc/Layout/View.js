@@ -54,7 +54,7 @@ class View extends Component {
             return (
                 <DepartmentsLayout
                     active={this.state.active}
-                    data={this.state.departments}
+                    departments={this.state.departments}
                     deleteHandler={this.deleteHandler.bind(this)}
                     addHandler={this.addHandler.bind(this)}
                     editHandler={this.editHandler.bind(this)}

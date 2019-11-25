@@ -1,16 +1,18 @@
 import React from 'react';
 import DepartmentData from "./DepartmentData.js"
 
- const departmentList = ({ data, update, deleteHandler, checkButtonId }) => {
-    if (!data) { return (<p>Loading...</p>); }
-    const departments = data.map((department, index) => {
-        return (<DepartmentData key={index}
-                                department={department}
-                                deleteHandler={deleteHandler}
-                                update={update}
-                                index={index}
-                                checkButtonId={checkButtonId}
-        />);
+ const departmentList = ({ departments, update, deleteHandler, checkButtonId }) => {
+    if (!departments) { return (<p>Loading...</p>); }
+    const departmentsView = departments.map((department, index) => {
+        return (
+            <DepartmentData
+             key={index}
+             department={department}
+             deleteHandler={deleteHandler}
+             update={update}
+             index={index}
+             checkButtonId={checkButtonId}/>
+        );
     });
     return (
         <table className="user-list table table-striped">
@@ -23,9 +25,14 @@ import DepartmentData from "./DepartmentData.js"
                 </tr>
             </thead>
             <tbody>
-            {departments}
+            {departmentsView}
             <tr>
-                <td><button id="buttonAdd" data-button-add="departments" onClick={(e) => { checkButtonId(e.target.id); update({ popup: true  }) }}> Add </button></td>
+                <td>
+                    <button id="buttonAdd" data-button-add="departments"
+                            onClick={(e) => { checkButtonId(e.target.id);
+                            update({ popup: true  }) }}> Add
+                    </button>
+                </td>
             </tr>
             </tbody>
         </table>

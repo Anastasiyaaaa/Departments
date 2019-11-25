@@ -2,7 +2,7 @@
   "name": "practice",
   "version": "0.1.0",
   "private": true,
-  "dependencies":  {
+  "dependencies": {
     "@babel/core": "7.6.0",
     "@svgr/webpack": "4.3.2",
     "@typescript-eslint/eslint-plugin": "^2.2.0",

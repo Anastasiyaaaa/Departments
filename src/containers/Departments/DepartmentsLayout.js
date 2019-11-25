@@ -18,7 +18,7 @@ class Departments extends Component {
 
     updateData(config) {
         this.setState(config);
-        console.log(config)
+        // console.log(config)
     }
     checkButtonId(id){
         if (id === "buttonList"){
@@ -26,7 +26,7 @@ class Departments extends Component {
             //     active: ""
             // })
         }
-        console.log(id)
+        // console.log(id)
     };
     render(){
         return(
@@ -36,7 +36,7 @@ class Departments extends Component {
                 </aside>*/}
                 <main>
                     <DepartmentList
-                        data={this.props.data}
+                        departments={this.props.departments}
                         deleteHandler={this.props.deleteHandler}
                         update={this.updateData.bind(this)}
                         checkButtonId={this.checkButtonId.bind(this)}
@@ -47,7 +47,7 @@ class Departments extends Component {
                         deleteHandler={this.props.deleteHandler}
                         checkButtonId={this.checkButtonId.bind(this)}
                         update={this.updateData.bind(this)}
-                        data={this.props.data}
+                        departments={this.props.departments}
                         active={this.state.active} >
                     </Popup>
                 : null }
