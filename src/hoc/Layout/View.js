@@ -16,10 +16,19 @@ class View extends Component {
             popup: false
         };
     }
-    deleteHandler(index){
-        const departments = [...this.state.departments];
-        departments.splice(index, 1); //метод для удаления элемента из объекта
-        this.setState({departments}) ;// переопределяем наш массив на новый
+    deleteHandler(active, index, e){
+        if (e && e.target.parentNode.parentNode.id === 'employeesList' ){
+            const departmentsPopup = [...this.state.departments];
+            const employeeRemove = departmentsPopup[active];
+            employeeRemove.employees.splice(index, 1);
+            console.log(employeeRemove);
+
+            this.setState(function() {return {}}); //почему рабоатает?????
+        }else {
+            const departments = [...this.state.departments];
+            departments.splice(index, 1); //метод для удаления элемента из объекта
+            this.setState({departments}) ;// переопределяем наш массив на новый
+        }
     }
     editHandler(index){
         console.log("edit" + index);

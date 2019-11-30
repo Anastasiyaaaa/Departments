@@ -20,3 +20,6 @@
     padding-left: 15px;
     width: 70%;
 }
+.Layout input{
+    max-width: 100px;
+}
