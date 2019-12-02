@@ -80,7 +80,7 @@ import ButtonsEmployees from '../../hoc/Layout/ButtonsEmployees.js'
 //         )
 //     }
 // }
-const activeDepartment = ({ data, active, update, checkButtonId, deleteHandler }) => {
+const activeDepartment = ({ data, active, update, checkButtonId, deleteHandler, changeInput }) => {
 
     console.log('data');
     if (!data || !data[active]) {
@@ -97,7 +97,12 @@ const activeDepartment = ({ data, active, update, checkButtonId, deleteHandler }
                         <table>
                             <tbody>
                             <tr id='employeesList'>
-                                <ActiveDepartmentKeys employeeObj={employeeObj}/>
+                                <ActiveDepartmentKeys
+                                    employeeObj={employeeObj}
+                                    changeInput={changeInput}
+                                    activeEmployee={index}
+                                    activeDepart={active}
+                                />
                                 <ButtonsEmployees
                                     update={update}
                                     deleteHandler={deleteHandler}

@@ -48,7 +48,8 @@ class Departments extends Component {
                         checkButtonId={this.checkButtonId.bind(this)}
                         update={this.updateData.bind(this)}
                         data={this.props.data}
-                        active={this.state.active} >
+                        active={this.state.active}
+                        changeInput={this.props.changeInput}>
                     </Popup>
                 : null }
             </div>

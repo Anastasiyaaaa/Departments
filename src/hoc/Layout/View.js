@@ -37,6 +37,26 @@ class View extends Component {
             popup: true
         });
     }
+    changeInput(activeDepart, activeEmployee, activeEmpl, key, value){
+
+        const departments = [...this.state.departments];
+        console.log(departments[activeDepart].employees[activeEmployee]);
+        let empl =departments[activeDepart].employees[activeEmployee];
+        console.log(empl[0].name);
+
+        console.log(key)
+
+       /* this.setState(function(state, props) {
+            const departments = [...this.state.departments];
+            return {
+
+            }
+        });*/
+        // this.setState({
+        //     key : "edit",
+        //     popup: true
+        // });
+    }
     addHandler(index){
         console.log("add" + index);
         this.setState({
@@ -67,6 +87,7 @@ class View extends Component {
                     deleteHandler={this.deleteHandler.bind(this)}
                     addHandler={this.addHandler.bind(this)}
                     editHandler={this.editHandler.bind(this)}
+                    changeInput={this.changeInput.bind(this)}
                     // update={this.updateData.bind(this)}
                 >
                 </DepartmentsLayout>

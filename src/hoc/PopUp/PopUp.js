@@ -2,9 +2,10 @@ import React from 'react';
 import classes from './PopUp.css';
 import Buttons from '../Layout/Buttons.js'
 import ActiveDepartment from "../../components/ActiveDepartment/ActiveDepartment";
+import Popup from "../../containers/Departments/DepartmentsLayout";
 
 
-const popup = ({update, checkButtonId, data, active, deleteHandler}) => {
+const popup = ({update, checkButtonId, data, active, deleteHandler, changeInput}) => {
 
         // console.log(active);
         return (
@@ -16,6 +17,7 @@ const popup = ({update, checkButtonId, data, active, deleteHandler}) => {
                                   deleteHandler={deleteHandler}
                                   index={active}
                                   checkButtonId={checkButtonId}
+                                  changeInput={changeInput}
                 />
 {/*
                 <table>
