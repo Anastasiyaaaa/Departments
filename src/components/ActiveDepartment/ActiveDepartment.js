@@ -80,7 +80,7 @@ import ButtonsEmployees from '../../hoc/Layout/ButtonsEmployees.js'
 //         )
 //     }
 // }
-const activeDepartment = ({ data, active, update, checkButtonId, deleteHandler, changeInput }) => {
+const activeDepartment = ({ data, active, update, checkButtonId, deleteHandler, changeInput, edit, editHandler, editIndex }) => {
 
     console.log('data');
     if (!data || !data[active]) {
@@ -91,8 +91,12 @@ const activeDepartment = ({ data, active, update, checkButtonId, deleteHandler, 
     if (departmentSelected.employees.length >= 1){
         layout = departmentSelected.employees.map((employee, index) => {
             let employeeObj = employee.employee;
+            let editEmployee;
+            if (editIndex === index) {
+                editEmployee = edit;
+            }
             return (
-                <tr key={index} id={index}>
+                <tr key={index} id={index} data-id={editEmployee}>
                     <td colSpan="2">
                         <table>
                             <tbody>
@@ -102,8 +106,11 @@ const activeDepartment = ({ data, active, update, checkButtonId, deleteHandler, 
                                     changeInput={changeInput}
                                     activeEmployee={index}
                                     activeDepart={active}
+                                    edit={editEmployee}
                                 />
                                 <ButtonsEmployees
+                                    editHandler={editHandler}
+                                    edit={editEmployee}
                                     update={update}
                                     deleteHandler={deleteHandler}
                                     index={index}

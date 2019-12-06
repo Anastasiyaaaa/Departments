@@ -13,7 +13,9 @@ class View extends Component {
             active: null,
             term: '',
             action: "",
-            popup: false
+            popup: false,
+            edit: false,
+            editIndex: ""
         };
     }
     deleteHandler(active, index, e){
@@ -33,25 +35,27 @@ class View extends Component {
     editHandler(index){
         console.log("edit" + index);
         this.setState({
-            action : "edit",
-            popup: true
+            edit: true,
+            editIndex: index
         });
     }
     changeInput(activeDepart, activeEmployee, activeEmpl, key, value){
 
         const departments = [...this.state.departments];
         console.log(departments[activeDepart].employees[activeEmployee]);
-        let empl =departments[activeDepart].employees[activeEmployee];
-        console.log(empl[0].name);
+        departments[activeDepart].employees[activeEmployee].employee[key] = value;
 
-        console.log(key)
+        console.log( departments[activeDepart].employees[activeEmployee].employee[key]);
 
-       /* this.setState(function(state, props) {
-            const departments = [...this.state.departments];
+        // console.log(value)
+
+        this.setState(function(state, props) {
+            const departments = [...state.departments];
+            departments[activeDepart].employees[activeEmployee].employee[key] = value;
             return {
-
+                departments
             }
-        });*/
+        });
         // this.setState({
         //     key : "edit",
         //     popup: true
@@ -84,6 +88,8 @@ class View extends Component {
                 <DepartmentsLayout
                     active={this.state.active}
                     data={this.state.departments}
+                    edit={this.state.edit}
+                    editIndex={this.state.editIndex}
                     deleteHandler={this.deleteHandler.bind(this)}
                     addHandler={this.addHandler.bind(this)}
                     editHandler={this.editHandler.bind(this)}

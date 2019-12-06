@@ -4,6 +4,7 @@ import DepartmentList from '../../hoc/Layout/Department-list.js';
 import ActiveDepartment from '../../components/ActiveDepartment/ActiveDepartment.js';
 import depart from "../../departments";
 import Popup from "../../hoc/PopUp/PopUp";
+import DepartmentsLayout from "../../hoc/Layout/View";
 
 
 class Departments extends Component {
@@ -40,11 +41,15 @@ class Departments extends Component {
                         deleteHandler={this.props.deleteHandler}
                         update={this.updateData.bind(this)}
                         checkButtonId={this.checkButtonId.bind(this)}
+                        edit={this.props.edit}
                     />
                 </main>
                 {(this.state.popup === true) ?
                     <Popup
+                        edit={this.props.edit}
                         deleteHandler={this.props.deleteHandler}
+                        editHandler={this.props.editHandler}
+                        editIndex={this.props.editIndex}
                         checkButtonId={this.checkButtonId.bind(this)}
                         update={this.updateData.bind(this)}
                         data={this.props.data}

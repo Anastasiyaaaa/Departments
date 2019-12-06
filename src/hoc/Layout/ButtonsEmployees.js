@@ -10,10 +10,17 @@ const ButtonsEmployees = (index, onChanger) => {
     )
 };
 */
-const ButtonsEmployees = ({ active, update, index, deleteHandler, checkButtonId}) => {
+const ButtonsEmployees = ({ active, update, index, deleteHandler, checkButtonId, editHandler, edit}) => {
+    let style = ''
+
+    ;
     return (
         <React.Fragment>
-            <td><button id="buttonEdit" onClick={(e) => { checkButtonId(e.target.id);  }}>Edit</button></td>
+
+            <td>
+                {(edit) ? <button id="buttonSubmit" onClick={(e) => {console.log(e.target.parentNode.parentNode) }}>Submit</button> : null}
+                <button id="buttonEdit" onClick={(e) => { editHandler(index);  }}>Edit</button>
+            </td>
             <td><button id="buttonRemove" onClick={(e) => deleteHandler (active, index, e)}> Remove </button></td>
         </React.Fragment>
     )

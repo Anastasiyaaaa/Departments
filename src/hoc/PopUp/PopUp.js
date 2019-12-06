@@ -5,7 +5,7 @@ import ActiveDepartment from "../../components/ActiveDepartment/ActiveDepartment
 import Popup from "../../containers/Departments/DepartmentsLayout";
 
 
-const popup = ({update, checkButtonId, data, active, deleteHandler, changeInput}) => {
+const popup = ({update, checkButtonId, data, active, deleteHandler, changeInput, edit, editHandler, editIndex}) => {
 
         // console.log(active);
         return (
@@ -14,10 +14,13 @@ const popup = ({update, checkButtonId, data, active, deleteHandler, changeInput}
                 <ActiveDepartment data={data}
                                   active={active}
                                   update={update}
+                                  editHandler={editHandler}
+                                  editIndex={editIndex}
                                   deleteHandler={deleteHandler}
                                   index={active}
                                   checkButtonId={checkButtonId}
                                   changeInput={changeInput}
+                                  edit={edit}
                 />
 {/*
                 <table>
