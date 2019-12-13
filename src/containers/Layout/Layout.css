@@ -1,0 +1,71 @@
+.Layout {
+    position: relative;
+    height: 100vh;
+    display:flex
+}
+.Layout aside{
+    flex-grow:8;
+}
+.Layout main{
+    flex-grow:3;
+}
+.Layout table{
+    width: 80%;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    margin: 50px auto;
+    border-spacing: 0;
+    overflow: hidden;
+}
+.Layout table th{
+    width: 10%;
+    text-align: left;
+    vertical-align: bottom;
+    border-bottom: 2px solid #ddd;
+    border-top: 0;
+    padding: 8px;
+}
+.Layout table th:first-child{
+    padding-left: 15px;
+    width: 70%;
+}
+.Layout table tr {
+    transition: background-color .1s;
+}
+.Layout table tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+.Layout table tr td{
+    padding: 10px;
+}
+.Layout button{
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.Layout button:focus,
+.Layout button:hover,
+.Layout button:active{
+    border: none;
+    outline: none;
+}
+.Layout input{
+    border: none;
+    background-color: transparent;
+}

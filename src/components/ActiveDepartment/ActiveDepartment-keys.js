@@ -1,7 +1,12 @@
 import React from 'react';
+import classes from '../Buttons/Button.css';
+import classesPopUp from '../../containers/PopUp/PopUp.css';
+
 
 const activeDepartmentKeys = ({employeeObj, changeInput, activeDepart, activeEmployee, edit}) => {
     const employeeKeys = Object.keys(employeeObj);
+    const component =  'employee';
+    let style = classesPopUp.PopUp_input;
     return (
         employeeKeys.map( (activeKey, index) => {
             let inputType;
@@ -13,11 +18,12 @@ const activeDepartmentKeys = ({employeeObj, changeInput, activeDepart, activeEmp
             let readOnly;
             if (edit === true){
                 readOnly = "";
-            }else { readOnly ="readonly"}
+                style += " "  + classes.Input_change;
+            }else { readOnly ="readonly";}
 
             return (
                 <td key={index} id={index} data-active={activeEmployee}>
-                    <input readOnly={readOnly} name={activeKey} onChange={(e) => {changeInput(activeDepart, activeEmployee, index, activeKey, e.target.value)}} type={inputType} value={employeeObj[activeKey]} />
+                    <input className={style} readOnly={readOnly} name={activeKey} onChange={(e) => {changeInput(activeDepart, e.target.value, component, activeEmployee, index, activeKey)}} type={inputType} value={employeeObj[activeKey]} />
                 </td>
             )
         })

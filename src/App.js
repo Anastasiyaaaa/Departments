@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import View from './hoc/Layout/View';
+import View from './containers/Layout/View';
 
 
 class App extends Component{

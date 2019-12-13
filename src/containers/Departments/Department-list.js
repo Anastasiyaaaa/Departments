@@ -1,15 +1,26 @@
 import React from 'react';
 import DepartmentData from "./DepartmentData.js"
 
- const departmentList = ({ data, update, deleteHandler, checkButtonId }) => {
+ const departmentList = ({ data,edit, update, deleteHandler, changeInput, editHandler, editInput }) => {
     if (!data) { return (<p>Loading...</p>); }
     const departments = data.map((department, index) => {
+        let readOnly;
+        if (edit === true){
+            readOnly = "";
+        }else { readOnly ="readonly"}
+        let editDepartment;
+        if (editInput === index) {
+            editDepartment = edit;
+        }
         return (<DepartmentData key={index}
                                 department={department}
                                 deleteHandler={deleteHandler}
                                 update={update}
                                 index={index}
-                                checkButtonId={checkButtonId}
+                                changeInput={changeInput}
+                                editHandler={editHandler}
+                                readOnly={readOnly}
+                                edit={editDepartment}
         />);
     });
     return (
@@ -17,16 +28,13 @@ import DepartmentData from "./DepartmentData.js"
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Remove</th>
-                    <th>Add</th>
                     <th>Edit</th>
+                    <th>Remove</th>
+                    <th>List</th>
                 </tr>
             </thead>
             <tbody>
             {departments}
-            <tr>
-                <td><button id="buttonAdd" data-button-add="departments" onClick={(e) => { checkButtonId(e.target.id); update({ popup: true  }) }}> Add </button></td>
-            </tr>
             </tbody>
         </table>
     );

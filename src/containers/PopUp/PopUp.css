@@ -1,0 +1,94 @@
+.PopUp_body{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border: 3px solid #45b8c9;
+    border-radius: 5px;
+    width: 750px;
+    height: auto;
+    background-color: white;
+    padding-bottom: 25px;
+}
+.PopUp_body h1{
+    padding-left: 15px;
+}
+.PopUp_body > table {
+    width: 97%;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    border-spacing: 0;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.PopUp_body table th{
+    width: 10%;
+    text-align: right;
+    vertical-align: bottom;
+    border-bottom: 2px solid #ddd;
+    border-top: 0;
+    padding: 8px;
+}
+.PopUp_body table th:first-child{
+    padding-left: 15px;
+    text-align: left;
+}
+.PopUp_body > table > tbody > tr {
+    transition: background-color .1s;
+}
+.PopUp_body > table > tbody > tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+.PopUp_body > table > tbody > tr td{
+    padding: 5px 0;
+}
+.PopUp_body table table{
+    margin: 0 10px;
+    width: calc(100% - 20px);
+}
+.PopUp_input{
+    max-width: 125px;
+    border: none;
+    background-color: transparent;
+}
+.PopUp_body button{
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.PopUp_body button:focus,
+.PopUp_body button:hover,
+.PopUp_body button:active{
+    border: none;
+    outline: none;
+}
+button.Btn_close{
+    position: absolute;
+    top: 25px;
+    right: 15px;
+    color: #ff0703;
+    font-weight: 700;
+    line-height: 18px;
+    font-size: 18px;
+    padding: 5px 9px;
+}
