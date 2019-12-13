@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './Button.css';
 
 const buttons = ({ update, index, deleteHandler, editHandler, edit}) => {
-    console.log(edit);
+
     return (
         <React.Fragment>
             <td> {(edit) ?
